@@ -4,8 +4,11 @@ namespace ArrToArr;
 
 class sortByKey
 {
+    protected $round = 0;
+
     public function testSort($a, $b, $type = 'DESC')
     {
+        $this->round++;
         if($type == 'ASC') {
             return ($a > $b) ? true : false;
         } else if($type == 'DESC') {
