@@ -19,11 +19,11 @@ $arr = [
     ],
     [
         'id' => 3,
-        'name' => 'd'
+        'name' => 'c'
     ],
     [
         'id' => 4,
-        'name' => 'c'
+        'name' => 'd'
     ],
     [
         'id' => 2,
@@ -33,4 +33,34 @@ $arr = [
 
 $new_arr = sortByKey::sortByKeyInteger($arr, 'id', 'ASC');
 print_r($new_arr);
+```
+Result
+```shell
+Array
+(
+    [0] => Array
+        (
+            [id] => 1
+            [name] => a
+        )
+
+    [1] => Array
+        (
+            [id] => 2
+            [name] => b
+        )
+
+    [2] => Array
+        (
+            [id] => 3
+            [name] => c
+        )
+
+    [3] => Array
+        (
+            [id] => 4
+            [name] => d
+        )
+
+)
 ```
