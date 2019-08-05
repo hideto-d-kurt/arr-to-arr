@@ -42,5 +42,16 @@ class ArrayToArray
         }
         return $result;
     }
+
+    public function binarySearchLevelOne($arr, $left, $size, $search_value) 
+    { 
+        if ($size >= $left) { 
+            $mid = ceil($left + ($size - $left) / 2); 
+            if ($arr[$mid] == $search_value)  return floor($mid); 
+            if ($arr[$mid] > $search_value)   return self::binarySearchLevelOne($arr, $left, $mid - 1, $search_value); 
+            return self::binarySearchLevelOne($arr, $mid + 1, $size, $search_value); 
+        } 
+        return -1; 
+    }
     
 }

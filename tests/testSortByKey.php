@@ -21,5 +21,5 @@ $arr = [
     ]
 ];
 
-$new_arr = sortByKey::sortByKeyInteger($arr, 'id', 'ASC');
+$new_arr = ArrayToArray::sortByKeyInteger($arr, 'id', 'ASC');
 print_r($new_arr);
