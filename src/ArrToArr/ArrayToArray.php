@@ -18,7 +18,7 @@ class ArrayToArray
 
     public static function sortByKeyInteger($arr, $by_key, $type = 'DESC')
     {
-        $s = new sortByKey();
+        $s = new ArrayToArray();
         recure:
         $tmp[0] = [];
         for($i = 0; $i < (count($arr)-1); $i++) {
@@ -50,6 +50,21 @@ class ArrayToArray
             if ($arr[$mid] == $search_value)  return floor($mid); 
             if ($arr[$mid] > $search_value)   return self::binarySearchLevelOne($arr, $left, $mid - 1, $search_value); 
             return self::binarySearchLevelOne($arr, $mid + 1, $size, $search_value); 
+        } 
+        return -1; 
+    }
+
+    public function binarySearchArraySet($arr, $left, $size, $search_value, $key) 
+    { 
+        if ($size >= $left) { 
+            $mid = ceil($left + ($size - $left) / 2); 
+            if ($arr[$mid][$key] == $search_value) {
+                return floor($mid); 
+            }
+            if ($arr[$mid][$key] > $search_value) {
+                return self::binarySearchArraySet($arr, $left, $mid - 1, $search_value, $key); 
+            }
+            return self::binarySearchArraySet($arr, $mid + 1, $size, $search_value, $key); 
         } 
         return -1; 
     }
