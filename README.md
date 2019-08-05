@@ -193,3 +193,64 @@ Array
     [name] => f
 )
 ```
+
+## Add new key to array set
+Example
+```php
+$arr = [
+    [
+        'id' => 1,
+        'name' => 'a'
+    ],
+    [
+        'id' => 3,
+        'name' => 'd'
+    ],
+    [
+        'id' => 4,
+        'name' => 'c'
+    ],
+    [
+        'id' => 2,
+        'name' => 'b'
+    ]
+];
+
+$new_arr = ArrayToArray::addNewKey($arr, 'email', ['id', 'name']);
+print_r($new_arr);
+```
+
+Result
+```php
+Array
+(
+    [0] => Array
+        (
+            [id] => 1
+            [name] => a
+            [email] => 
+        )
+
+    [1] => Array
+        (
+            [id] => 3
+            [name] => d
+            [email] => 
+        )
+
+    [2] => Array
+        (
+            [id] => 4
+            [name] => c
+            [email] => 
+        )
+
+    [3] => Array
+        (
+            [id] => 2
+            [name] => b
+            [email] => 
+        )
+
+)
+```
