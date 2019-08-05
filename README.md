@@ -10,7 +10,7 @@ Example
 ```php
 <?php 
 require_once __DIR__ . '/../vendor/autoload.php'; // Autoload files using Composer autoload
-use ArrToArr\sortByKey;
+use ArrToArr\ArrayToArray;
 
 $arr = [
     [
@@ -31,7 +31,7 @@ $arr = [
     ]
 ];
 
-$new_arr = sortByKey::sortByKeyInteger($arr, 'id', 'ASC');
+$new_arr = ArrayToArray::sortByKeyInteger($arr, 'id', 'ASC');
 print_r($new_arr);
 ```
 Result
@@ -69,7 +69,7 @@ Array
 Example
 ```php
 use Jenssegers\Mongodb\Eloquent\Model as Eloquent;
-use ArrToArr\RemoveMongoID;
+use ArrToArr\ArrayToArray;
 
 class Users extends Eloquent 
 {
@@ -81,7 +81,7 @@ class Users extends Eloquent
 
     public static function getAllUser()
     {
-        $arrToarr = new RemoveMongoID();
+        $arrToarr = new ArrayToArray();
         $result = self::get();
         $result = json_decode($result, true);
         $result = $arrToarr->removeMongoId($result);

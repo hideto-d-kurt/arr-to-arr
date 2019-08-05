@@ -2,7 +2,7 @@
 
 namespace ArrToArr;
 
-class sortByKey
+class ArrayToArray
 {
     protected $round = 0;
 
@@ -14,7 +14,6 @@ class sortByKey
         } else if($type == 'DESC') {
             return ($a > $b) ? false : true;
         }
-        
     }
 
     public static function sortByKeyInteger($arr, $by_key, $type = 'DESC')
@@ -31,8 +30,17 @@ class sortByKey
                 goto recure;
             }
         }
-        
         return $arr;
+    }
+
+    public static function removeMongoId($arr)
+    {
+        $result = [];
+        foreach($arr as $key => $val) {
+            unset($val['_id']);
+            array_push($result, $val);
+        }
+        return $result;
     }
     
 }
