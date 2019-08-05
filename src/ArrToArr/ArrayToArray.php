@@ -54,7 +54,7 @@ class ArrayToArray
         return -1; 
     }
 
-    public function binarySearchArraySet($arr, $left, $size, $search_value, $key) 
+    public static function binarySearchArraySet($arr, $left, $size, $search_value, $key) 
     { 
         if ($size >= $left) { 
             $mid = ceil($left + ($size - $left) / 2); 
@@ -68,5 +68,16 @@ class ArrayToArray
         } 
         return -1; 
     }
-    
+
+    public static function addNewKey($arr, $new_key, $key_set)
+    {
+        $new_arr = [];
+        for($i = 0; $i < count($arr); $i++) {
+            foreach($key_set as $key_set_val) {
+                $new_arr[$i][$key_set_val] = $arr[$i][$key_set_val];
+            }
+            $new_arr[$i][$new_key] = null;
+        }
+        return $new_arr;
+    } 
 }
