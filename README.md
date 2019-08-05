@@ -1,10 +1,19 @@
-# Array to Array
+# Array to Array for PHP
+[![Latest Stable Version](https://poser.pugx.org/hideto-d-kurt/arr-to-arr/v/stable)](https://packagist.org/packages/hideto-d-kurt/arr-to-arr)
+[![Total Downloads](https://poser.pugx.org/hideto-d-kurt/arr-to-arr/downloads)](https://packagist.org/packages/hideto-d-kurt/arr-to-arr)
+[![License](https://poser.pugx.org/hideto-d-kurt/arr-to-arr/license)](https://packagist.org/packages/hideto-d-kurt/arr-to-arr)
 
-Generated using comoser
+# Requirements
+```
+ * PHP >= 5.3.0
+```
+
+# Installation
 ```shell
 composer require hideto-d-kurt/arr-to-arr
 ```
 
+# Usage
 ## Sort by integer value with key
 Example
 ```php
